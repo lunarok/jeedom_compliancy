@@ -33,7 +33,8 @@ sed -i "s/object::all()/jeeObject::all()/g" desktop/php/${ID}.php
 
 #Page équipement conforme
 echo "Check eqlogic page"
-if [ 'grep in_searchEqlogic desktop/php/$ID.php' ]
+grep -q in_searchEqlogic desktop/php/$ID.php
+if [ $? -eq 0 ]
 then
     echo "eqlogic page ok"
 else
@@ -42,7 +43,8 @@ fi
 
 #Présence de widgets
 echo "Check if there is widgets"
-if [ 'grep $_widgetPossibility core/class/$ID.class.php' ]
+grep -q _widgetPossibility core/class/$ID.class.php
+if [ $? -eq 0 ]
 then
     echo "Dedicated widget in usage, please check compliancy manualy"
 else
