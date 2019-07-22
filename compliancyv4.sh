@@ -33,7 +33,7 @@ sed -i "s/object::all()/jeeObject::all()/g" desktop/php/${ID}.php
 
 #Page équipement conforme
 echo "Check eqlogic page"
-if grep -q "desktop/php/$ID.php" "in_searchEqlogic"
+if [grep "in_searchEqlogic" "desktop/php/$ID.php"]
 then
     echo "eqlogic page ok"
 else
@@ -42,7 +42,7 @@ fi
 
 #Présence de widgets
 echo "Check if there is widgets"
-if grep -q "core/class/$ID.class.php" "$_widgetPossibility"
+if [grep "$_widgetPossibility" "core/class/$ID.class.php"]
 then
     echo "Dedicated widget in usage, please check compliancy manualy"
 else
@@ -52,3 +52,5 @@ fi
 #Push changes
 git commit -a -m "Compliancy v4"
 git push
+
+cd ..
