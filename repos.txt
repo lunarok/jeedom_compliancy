@@ -1,0 +1,9 @@
+relaynet
+espeasy
+kmtronic
+MQTT
+mySensors
+rflink
+shelly
+unipi
+xiaomihome
