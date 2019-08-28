@@ -4,6 +4,8 @@ ID=${1}
 REPO="jeedom_$ID"
 USER="lunarok"
 
+echo "*** ${ID} ***"
+
 #Clone or pull latest commit if repo exist
 if [ ! -d "$ID" ]; then
     echo "Git clone repo"
